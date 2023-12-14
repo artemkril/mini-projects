@@ -1,0 +1,106 @@
+@import url(reset.css);
+@import url(fonts.css);
+
+.container{
+    width: 99%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, lightgreen, pink );
+    padding: 10px;
+}
+
+.to_do_app{
+    width: 100%;
+    max-width: 500px;
+    background-color: aliceblue;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.to_do_app h2{
+    color: chartreuse;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Nova Square';
+    font-size: 30px;
+    font-weight: 700;
+}
+.to_do_app h2 img{
+    margin-left: 30px;
+    width: 25px;
+}
+.task_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(203, 222, 238);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-family: 'Nova Square';
+
+}
+#input_box{
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Nova Square';
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: rgb(182, 252, 113);
+    color:#000000;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: 'Nova Square';
+}
+ul li{
+    list-style: none;
+    font-size: 16px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    font-family: 'Nova Square';
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(../images/circle.png);
+    background-size: cover;
+    background-position: center;
+    top: 6px;
+    left: 8px;
+}
+ul li.checked{
+    color: chartreuse;
+    text-decoration: line-through;
+}
+.checked::before{
+    background-image: url(../images/free-icon-checkmark-11122441.png);
+}
+ul li span{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    color: rgb(241, 135, 153);
+    line-height: 30px;
+    text-align: center;
+}
+ul li span:hover{
+    background-color: rgb(145, 240, 51);
+    border-radius: 50%;
+}
+ 
