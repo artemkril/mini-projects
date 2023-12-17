@@ -1,6 +1,9 @@
 const Main_Input = document.getElementById("input_box");
 const Main_List = document.getElementById("list_of_tasks");
-function addTask(){
+const buttInput = document.getElementById("addTask");
+function addTask(event){
+    event.preventDefault();
+
     if (Main_Input.value === ''){
         alert('You must write something!');
     }
@@ -15,6 +18,7 @@ function addTask(){
     Main_Input.value = '';
     saveData();
 }
+buttInput.addEventListener("submit", addTask)
 
 Main_List.addEventListener('click',  function(event){
     if (event.target.tagName === "LI"){
