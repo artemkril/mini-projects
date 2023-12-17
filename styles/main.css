@@ -86,7 +86,7 @@ ul li.checked{
     text-decoration: line-through;
 }
 .checked::before{
-    background-image: url(../images/check-mark.svg);
+    background-image: url(../images/wavy-check.svg);
 }
 ul li span{
     position: absolute;
