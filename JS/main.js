@@ -1,26 +1,26 @@
-const Main_Input = document.getElementById("input_box");
-const Main_List = document.getElementById("list_of_tasks");
+const mainInput = document.getElementById("input_box");
+const mainList = document.getElementById("list_of_tasks");
 const buttInput = document.getElementById("addTask");
 function addTask(event){
     event.preventDefault();
 
-    if (Main_Input.value === ''){
+    if (mainInput.value === ''){
         alert('You must write something!');
     }
     else{
         let li = document.createElement('li');
-        li.innerHTML = Main_Input.value;
-        Main_List.appendChild(li);
+        li.innerHTML = mainInput.value;
+        mainList.appendChild(li);
         let span = document.createElement("span");
         span.innerHTML = '\u00d7';
         li.appendChild(span);
     }
-    Main_Input.value = '';
+    mainInput.value = '';
     saveData();
 }
 buttInput.addEventListener("submit", addTask)
 
-Main_List.addEventListener('click',  function(event){
+mainList.addEventListener('click',  function(event){
     if (event.target.tagName === "LI"){
         event.target.classList.toggle("checked");
         saveData()
@@ -31,9 +31,9 @@ Main_List.addEventListener('click',  function(event){
 },false)
 
 function saveData(){
-    localStorage.setItem("data", Main_List.innerHTML)
+    localStorage.setItem("data", mainList.innerHTML)
 }
 function showList(){
-    Main_List.innerHTML = localStorage.getItem("data")
+    mainList.innerHTML = localStorage.getItem("data")
 }
 showList()
