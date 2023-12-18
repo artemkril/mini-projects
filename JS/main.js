@@ -7,10 +7,18 @@ function createTaskElement(taskText) {
     let elementLi = document.createElement('li')
     elementLi.innerHTML = taskText;
 
-    let span = document.createElement("span"); //створення хрестика (видалення)
-    span.innerHTML = '\u00d7';
+    let spanElement = document.createElement("span"); //створення хрестика (видалення)
+    spanElement.innerHTML = '\u00d7';
+    spanElement.className = "deleteButton"; //Додавання класу
 
-    elementLi.appendChild(span);
+    spanElement.addEventListener('click', function(event) {
+        event.stopPropagation(); // Зупиняємо подію всплеску, щоб не активувалася подія для батьківського LI
+        elementLi.remove();
+        saveData();
+    });
+
+
+    elementLi.appendChild(spanElement);
     return elementLi;
 }
 
@@ -33,9 +41,6 @@ buttInput.addEventListener("submit", addTask)
 mainList.addEventListener('click', function (event) {
     if (event.target.tagName === "LI") {
         event.target.classList.toggle("checked");
-        saveData()
-    } else if (event.target.tagName === "SPAN") {
-        event.target.parentElement.remove();
         saveData()
     }
 }, false)
