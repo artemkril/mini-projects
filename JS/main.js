@@ -11,7 +11,7 @@ function createTaskElement(taskText) {
     spanElement.innerHTML = '\u00d7';
     spanElement.className = "deleteButton"; //Додавання класу
 
-    spanElement.addEventListener('click', function(event) {
+    spanElement.addEventListener('click', function (event) {
         event.stopPropagation(); // Зупиняємо подію всплеску, щоб не активувалася подія для батьківського LI
         elementLi.remove();
         saveData();
@@ -47,8 +47,11 @@ mainList.addEventListener('click', function (event) {
 
 function saveData() {
     localStorage.setItem("data", mainList.innerHTML)
+
 }
 function showList() {
     mainList.innerHTML = localStorage.getItem("data")
 }
 showList()
+
+

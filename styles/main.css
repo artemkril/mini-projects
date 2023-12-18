@@ -85,7 +85,7 @@ ul li.checked{
     color: chartreuse;
     text-decoration: line-through;
 }
-.checked::before{
+ul li.checked::before{
     background-image: url(../images/wavy-check.svg);
 }
 ul li span{
